@@ -3,26 +3,18 @@
 This README would normally document whatever steps are necessary to get the
 application up and running.
 
-Things you may want to cover:
+In this case it's for learn how to use a survey_test app:
 
-* Ruby version
+If you need to administrate the surveys questions the credentials are:
 
-* System dependencies
+* https://fsurvey.herokuapp.com/admin
 
-* Configuration
+user: admin
+pass: testing123
 
-* Database creation
+In the begin this app just contain registration with fb
+because we can extract a good information of the user profile.
 
-* Database initialization
+The user just can answer the question once
 
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+Please feel free to use this code for what you find necessary.
