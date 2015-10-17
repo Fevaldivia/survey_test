@@ -6,6 +6,11 @@ Rails.application.routes.draw do
   resources :questions
   root to: 'questions#index'
 
+  #routes for facebook login
+  get '/auth/:provider/callback', to: 'sessions#create'
+  get '/auth/failure', to: 'sessions#auth_fail'
+  get '/sign_out', to: 'sessions#destroy', as: :sign_out
+
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 
