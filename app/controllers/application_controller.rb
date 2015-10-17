@@ -8,4 +8,11 @@ class ApplicationController < ActionController::Base
   end
 
   helper_method :current_user
+
+  protected
+    def authenticate
+    authenticate_or_request_with_http_basic do |username, password|
+      username == "admin" && password == "fosubo123"
+    end
+  end
 end
