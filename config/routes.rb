@@ -4,7 +4,7 @@ Rails.application.routes.draw do
 
   # You can have the root of your site routed with "root"
   resources :questions
-  root to: 'questions#index'
+  root to: 'welcome#index'
 
   #routes for facebook login
   get '/auth/:provider/callback', to: 'sessions#create'
@@ -12,6 +12,8 @@ Rails.application.routes.draw do
   get '/sign_out', to: 'sessions#destroy', as: :sign_out
 
   resources :votes, only: [:create]
+
+  match 'admin', to: 'admins#index', via: [:get]
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
