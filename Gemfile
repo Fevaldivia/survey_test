@@ -40,3 +40,7 @@ gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
 # Bootstrap sass gem
 gem 'bootstrap-sass'
+# add jquery turbolinks
+gem 'jquery-turbolinks'
+# add cocoon for nested attributes
+gem "cocoon"
