@@ -49,3 +49,5 @@ gem "cocoon"
 gem 'omniauth-facebook'
 # Add figaro gem for env settings
 gem 'figaro'
+# Counter for clients votes
+gem 'counter_culture', '~> 0.1.33'

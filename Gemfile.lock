@@ -36,6 +36,9 @@ GEM
       minitest (~> 5.1)
       thread_safe (~> 0.3, >= 0.3.4)
       tzinfo (~> 1.1)
+    after_commit_action (1.0.0)
+      activerecord (>= 3.0.0)
+      activesupport (>= 3.0.0)
     arel (6.0.3)
     autoprefixer-rails (5.2.1)
       execjs
@@ -55,6 +58,10 @@ GEM
       coffee-script-source
       execjs
     coffee-script-source (1.9.1.1)
+    counter_culture (0.1.33)
+      activerecord (>= 3.0.0)
+      activesupport (>= 3.0.0)
+      after_commit_action (~> 1.0.0)
     debug_inspector (0.0.2)
     diff-lcs (1.2.5)
     erubis (2.7.0)
@@ -198,6 +205,7 @@ DEPENDENCIES
   byebug
   cocoon
   coffee-rails (~> 4.1.0)
+  counter_culture (~> 0.1.33)
   figaro
   jbuilder (~> 2.0)
   jquery-rails
