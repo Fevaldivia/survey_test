@@ -1,22 +1,15 @@
-<% content_for(:page_header) {"Participate in our survey right now!"} %>
+<% content_for(:page_header) {"Participate in our survey !"} %>
 
 <% @questions.each do |question| %>
   <div class="well">
     <h2><%= question.topic %> <small>(voted: <%= question.votes_summary %>)</small></h2>
+    <%= link_to 'Participate!', question_path(question), class: 'btn btn-primary btn-lg block' %>
 
-    <p>
-      <% if current_user %>
-        <%= link_to 'Participate!', question_path(question), class: 'btn btn-primary btn-lg block' %>
-      <% else %>
-        Please sign in via <%= link_to 'Facebook', '/auth/facebook' %> to participate in this question.
-      <% end %>
-    </p>
-
-    <div class="btn-group">
+<!--     <div class="btn-group">
       <%= link_to 'Edit', edit_question_path(question), class: 'btn btn-default' %>
       <%= link_to 'Delete', question_path(question),
                   method: :delete,
                   class: 'btn btn-danger', data: {confirm: 'Are you sure?'} %>
-    </div>
+    </div> -->
   </div>
 <% end %>
