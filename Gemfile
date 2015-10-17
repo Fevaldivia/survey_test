@@ -47,3 +47,5 @@ gem 'jquery-turbolinks'
 gem "cocoon"
 # Add Gem for authenticate with facebook
 gem 'omniauth-facebook'
+# Add figaro gem for env settings
+gem 'figaro'
