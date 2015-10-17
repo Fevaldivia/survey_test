@@ -1,0 +1,8 @@
+<div class="form-group">
+  <%= content_tag(:label) do %>
+    <% unless current_user.voted_for?(@question) %>
+      <%= radio_button_tag 'alternative[id]', option.id %>
+    <% end %>
+    <%= option.title %>
+  <% end %>
+</div>
