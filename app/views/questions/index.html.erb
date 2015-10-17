@@ -2,7 +2,7 @@
 
 <% @questions.each do |question| %>
   <div class="well">
-    <h2><%= question.topic %></h2>
+    <h2><%= question.topic %> <small>(voted: <%= question.votes_summary %>)</small></h2>
 
     <p>
       <% if current_user %>
