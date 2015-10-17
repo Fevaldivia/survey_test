@@ -15,7 +15,7 @@ class User < ActiveRecord::Base
   end
 
   def voted_for?(question)
-    alternatives.any? {|v| v.question == question }
-  end
+  alternatives(true).any? {|v| v.question == question }
+end
 
 end
