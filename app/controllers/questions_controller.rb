@@ -36,13 +36,13 @@ class QuestionsController < ApplicationController
     if @question.destroy
       flash[:success] = 'Question was destroyed!'
     else
-      flash[:warning] = 'Error destroying poll...'
+      flash[:warning] = 'Error destroying question...'
     end
     redirect_to questions_path
   end
 
   def show
-    @question = Question.find_by_id(params[:id])
+    @question = Question.includes(:alternatives).find_by_id(params[:id])
   end
 
   private
