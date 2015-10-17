@@ -11,6 +11,8 @@ Rails.application.routes.draw do
   get '/auth/failure', to: 'sessions#auth_fail'
   get '/sign_out', to: 'sessions#destroy', as: :sign_out
 
+  resources :votes, only: [:create]
+
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 
