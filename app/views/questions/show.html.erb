@@ -3,3 +3,25 @@
 <h2><%= @question.topic %></h2>
 
 <%= render 'voting_form' %>
+
+<script data-turbolinks-track="true">
+  $(document).ready(function() {
+    var voting_form = $('#voting_form');
+    voting_form.validate({
+      focusInvalid: false,
+      errorClass: 'alert alert-warning',
+      errorElement: "div",
+      errorPlacement: function(error, element) { voting_form.before(error); },
+      rules: {
+        'alternative[id]': {
+          required: true
+        }
+      },
+      messages: {
+        'alternative[id]': {
+          required: "Please select one of the options."
+        }
+      }
+    });
+  });
+</script>
