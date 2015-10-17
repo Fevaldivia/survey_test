@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151017041634) do
+ActiveRecord::Schema.define(version: 20151017054231) do
 
   create_table "alternatives", force: :cascade do |t|
     t.string   "title"
@@ -37,5 +37,16 @@ ActiveRecord::Schema.define(version: 20151017041634) do
   end
 
   add_index "users", ["uid"], name: "index_users_on_uid"
+
+  create_table "votes", force: :cascade do |t|
+    t.integer  "user_id"
+    t.integer  "alternative_id"
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
+  end
+
+  add_index "votes", ["alternative_id", "user_id"], name: "index_votes_on_alternative_id_and_user_id", unique: true
+  add_index "votes", ["alternative_id"], name: "index_votes_on_alternative_id"
+  add_index "votes", ["user_id"], name: "index_votes_on_user_id"
 
 end
