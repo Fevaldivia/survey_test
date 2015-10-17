@@ -1,4 +1,7 @@
 class User < ActiveRecord::Base
+   has_many :votes, dependent: :destroy
+   has_many :alternatives, through: :votes
+
   class << self
     def from_omniauth(auth)
       uid = auth.uid
@@ -10,4 +13,9 @@ class User < ActiveRecord::Base
       user
     end
   end
+
+  def voted_for?(question)
+    alternatives.any? {|v| v.question == question }
+  end
+
 end
