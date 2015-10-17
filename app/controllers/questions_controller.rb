@@ -1,4 +1,5 @@
 class QuestionsController < ApplicationController
+  before_filter :authenticate, only: [:new, :create, :edit, :update, :destroy]
   def index
     @questions = Question.all
   end
@@ -11,7 +12,7 @@ class QuestionsController < ApplicationController
     @question = Question.new(question_params)
     if @question.save
       flash[:success] = 'Question was created!'
-      redirect_to questions_path
+      redirect_to admin_path
     else
       render 'new'
     end
@@ -25,7 +26,7 @@ class QuestionsController < ApplicationController
     @question = Question.find_by_id(params[:id])
     if @question.update_attributes(question_params)
       flash[:success] = 'Question was updated!'
-      redirect_to questions_path
+      redirect_to admin_path
     else
       render 'edit'
     end
@@ -38,7 +39,7 @@ class QuestionsController < ApplicationController
     else
       flash[:warning] = 'Error destroying question...'
     end
-    redirect_to questions_path
+    redirect_to admin_path
   end
 
   def show
