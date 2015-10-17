@@ -1,0 +1,12 @@
+<% if current_user %>
+   <p>You're welcome to the program</p>
+  <% else %>
+<p>
+  Please sign in via:
+</p>
+<p>
+    <%= link_to 'Facebook', '/auth/facebook', class: "btn btn-primary" %>
+</p>
+     to participate in this program.
+
+ <% end %>

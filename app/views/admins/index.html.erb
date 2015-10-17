@@ -1,0 +1,14 @@
+<% content_for(:page_header) {"Admin your surveys !"} %>
+
+<% @questions.each do |question| %>
+  <div class="well">
+    <h2><%= question.topic %> <small>(voted: <%= question.votes_summary %>)</small></h2>
+
+<div class="btn-group">
+      <%= link_to 'Edit', edit_question_path(question), class: 'btn btn-default' %>
+      <%= link_to 'Delete', question_path(question),
+                  method: :delete,
+                  class: 'btn btn-danger', data: {confirm: 'Are you sure?'} %>
+    </div>
+  </div>
+<% end %>
