@@ -12,7 +12,5 @@ class VotesController < ApplicationController
       render js: 'alert(\'Your vote cannot be saved.\');'
     end
 
-    @option.votes.create({user_id: current_user.id})  + current_user.votes.create({alternative_id: @option.id})
-    current_user.alternatives.reset
   end
 end
