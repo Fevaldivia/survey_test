@@ -44,3 +44,5 @@ gem 'bootstrap-sass'
 gem 'jquery-turbolinks'
 # add cocoon for nested attributes
 gem "cocoon"
+# Add Gem for authenticate with facebook
+gem 'omniauth-facebook'
