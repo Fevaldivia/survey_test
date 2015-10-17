@@ -12,9 +12,17 @@
       <div class="navbar-header">
         <%= link_to 'Survey', root_path, class: 'navbar-brand' %>
       </div>
-      <ul class="nav navbar-nav">
-        <li><%= link_to 'Add question', new_question_path %></li>
-      </ul>
+        <ul class="nav navbar-nav">
+          <li><%= link_to 'Add question', new_question_path %></li>
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+          <% if current_user %>
+            <li><%= image_tag current_user.image_url, alt: current_user.name %></li>
+            <li><%= link_to 'Logout', sign_out_path %></li>
+          <% else %>
+            <li><%= link_to 'Sign in', '/auth/facebook' %></li>
+          <% end %>
+        </ul>
     </div>
   </div>
 
